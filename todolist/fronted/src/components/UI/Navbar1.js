@@ -34,9 +34,9 @@ export const Navbar1 = () => {
             <Link className="nav-link page-scroll" to="details">DETAILS</Link>
           </li>
         </ul>
-        <span className="nav-item" >
+        {/* <span className="nav-item" >
           <NavLink className="btn-outline-sm "  to="login1"  >LOG IN</NavLink>
-        </span>
+        </span> */}
       </div>
     </div> {/* end of container */}
   </nav> {/* end of navbar */}
