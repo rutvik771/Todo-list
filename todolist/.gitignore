@@ -1,6 +1,11 @@
 fronted/node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
 backend/node_modules
 =======
 backend/node_modules
 >>>>>>> f093bb0117a11039078e8d5704b22ed487058e68
+=======
+backend/node_modules
+
+>>>>>>> 23dd917e67e5cebca7408f3fb1cf7e04c854b1eb
