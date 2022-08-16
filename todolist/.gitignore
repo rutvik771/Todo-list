@@ -1,2 +1,6 @@
 fronted/node_modules
+<<<<<<< HEAD
 backend/node_modules
+=======
+backend/node_modules
+>>>>>>> f093bb0117a11039078e8d5704b22ed487058e68
