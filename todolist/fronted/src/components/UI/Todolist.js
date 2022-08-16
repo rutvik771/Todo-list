@@ -12,10 +12,6 @@ export const Todolist = () => {
   const [task, setTask] = useState("");
   const [tasklist, setTasklist] = useState([]);
 
-  useEffect(() => {
-    UserData();
-   }, [])
-
   const style = {
     color: "black",
     backgroundColor: "",
@@ -28,12 +24,6 @@ export const Todolist = () => {
     border:"none"
   };
 
-  const ul = {
-    marginRight: "14rem",
-    marginLeft: "14rem"
-  };
-
-
   const listOnChangeHandler = (e) => {
     setTask(e.target.value);
   };
@@ -41,11 +31,12 @@ export const Todolist = () => {
   const UserData = () => {
     axios.get("http://localhost:4000/get/task").then((res) => {
       setTasklist(res.data.data);
-      
     });
   };
 
-  
+  useEffect(() => {
+    UserData();
+  }, []);
 
   const submit = (e) => {
     e.preventDefault();
@@ -54,13 +45,8 @@ export const Todolist = () => {
     };
 
     axios.post("http://localhost:4000/task", data).then((res) => {
-      UserData();
       console.log(res.data.data);
     });
-    const firstNameInput = document.getElementById('Enter Task');
-    console.log(firstNameInput.value);
-    firstNameInput.value = '';
-    console.log(firstNameInput.value);
   };
 
   const deleteTask = (_id) => {
@@ -83,8 +69,6 @@ export const Todolist = () => {
                 <div className="input-group mb-3" style={style}>
                   <input
                     type="text"
-                    name="Enter Task"
-                    id="Enter Task"
                     className="form-control"
                     placeholder="Enter Task"
                     aria-label="Enter Task"
@@ -104,8 +88,7 @@ export const Todolist = () => {
                     </button>
                   </div>
                 </div>
-              </form>
-                <ul className="list-group" style={ul}>
+                <ul className="list-group">
                   <div>
                     {tasklist.map((task) => {
                       return (
@@ -120,7 +103,7 @@ export const Todolist = () => {
                     })}
                   </div>
                 </ul>
-              
+              </form>
             </div>
           </div>
         </div>
